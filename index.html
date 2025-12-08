@@ -1,14 +1,17 @@
 <!doctype html>
-<html lang="en" data-bs-theme="auto">
+<html lang="en" data-bs-theme="light">
 
 
 <style>
     .rounded-circle {
         object-fit: cover;
     }
+    body, html {
+        background-color: #ffffff !important;
+    }
     body {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        background: #f5f5f5;
+        background: #ffffff;
         color: #111111;
         line-height: 1.6;
     }
@@ -16,6 +19,12 @@
     .navbar a,
     .navbar-brand,
     .nav-link {
+        color: #ffffff !important;
+    }
+    /* Make carousel text white */
+    .carousel-caption h1,
+    .carousel-caption h5,
+    .carousel-caption p {
         color: #ffffff !important;
     }
 
@@ -40,6 +49,22 @@
     h1, h2 {
         color: #111111;
         font-weight: 600;
+    }
+        /* Main content text colors */
+    .container p,
+    .container h2,
+    .featurette-heading,
+    .lead,
+    footer p {
+        color: #111111 !important;  /* Dark grey/black for main text */
+    }
+
+    .text-body-secondary {
+        color: #333e46 !important;  /* Lighter grey for secondary text */
+    }
+
+    .text-muted {
+        color: #333e46 !important;  /* Lighter grey for muted text */
     }
 
     a {
@@ -124,10 +149,10 @@
         .b-example-divider {
             width: 100%;
             height: 3rem;
-            background-color: rgba(0, 0, 0, .1);
-            border: solid rgba(0, 0, 0, .15);
+            background-color: #ffffff;
+            border: #ffffff;
             border-width: 1px 0;
-            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+            box-shadow: inset 0 .5em 1.5em #ffffff, inset 0 .125em .5em #ffffff;
         }
 
         .b-example-vr {
@@ -158,30 +183,20 @@
             white-space: nowrap;
             -webkit-overflow-scrolling: touch;
         }
-
-        .btn-bd-primary {
-            --bd-violet-bg: #e63946;
-            --bd-violet-rgb: 230, 57, 70;
-            --bs-btn-font-weight: 600;
-            --bs-btn-color: var(--bs-white);
-            --bs-btn-bg: var(--bd-violet-bg);
-            --bs-btn-border-color: var(--bd-violet-bg);
-            --bs-btn-hover-color: var(--bs-white);
-            --bs-btn-hover-bg: #bb111f;
-            --bs-btn-hover-border-color: #bb111f;
-            --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-            --bs-btn-active-color: var(--bs-btn-hover-color);
-            --bs-btn-active-bg: #bb111f;
-            --bs-btn-active-border-color: #bb111f;
+                /* Force secondary text to be darker */
+        .text-body-secondary,
+        span.text-body-secondary,
+        .featurette-heading .text-body-secondary {
+            color: #707e98 !important;  /* Much darker grey */
         }
 
-        .bd-mode-toggle {
-            z-index: 1500;
+        .text-muted,
+        p.text-muted,
+        .lead.text-muted {
+            color: #707e98 !important;  /* Much darker grey */
         }
 
-        .bd-mode-toggle .dropdown-menu .active .bi {
-            display: block !important;
-        }
+        
     </style>
     <link href="https://getbootstrap.com/docs/5.3/examples/carousel/carousel.css" rel="stylesheet">
 </head>
@@ -205,34 +220,8 @@
                 d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
         </symbol>
     </svg>
-    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle"><button
-            class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
-            aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)"><svg
-                class="bi my-1 theme-icon-active" width="1em" height="1em">
-                <use href="#circle-half"></use>
-            </svg><span class="visually-hidden" id="bd-theme-text">Toggle theme</span></button>
-        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
-            <li><button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
-                    aria-pressed="false"><svg class="bi me-2 opacity-50" width="1em" height="1em">
-                        <use href="#sun-fill"></use>
-                    </svg>Light <svg class="bi ms-auto d-none" width="1em" height="1em">
-                        <use href="#check2"></use>
-                    </svg></button></li>
-            <li><button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
-                    aria-pressed="false"><svg class="bi me-2 opacity-50" width="1em" height="1em">
-                        <use href="#moon-stars-fill"></use>
-                    </svg>Dark <svg class="bi ms-auto d-none" width="1em" height="1em">
-                        <use href="#check2"></use>
-                    </svg></button></li>
-            <li><button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
-                    aria-pressed="true"><svg class="bi me-2 opacity-50" width="1em" height="1em">
-                        <use href="#circle-half"></use>
-                    </svg>Auto <svg class="bi ms-auto d-none" width="1em" height="1em">
-                        <use href="#check2"></use>
-                    </svg></button></li>
-        </ul>
-    </div>
-    <header data-bs-theme="dark">
+    
+    <header data-bs-theme="light">
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <div class="container-fluid"><a class="navbar-brand" href="#">Online Safety Game</a><button class="navbar-toggler"
                     type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
@@ -386,9 +375,7 @@
             <p>&copy; 2025 CSE Service Project &middot; <a href="#">Privacy</a>&middot; <a href="#">Terms</a></p>
         </footer>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+    
 </body>
 
 </html>
