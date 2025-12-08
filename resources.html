@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-bs-theme="auto">
+<html lang="en" data-bs-theme="light">
 
 <head>
     <script src="https://getbootstrap.com/docs/5.3/assets/js/color-modes.js"></script>
@@ -70,19 +70,19 @@
         }
 
         .btn-bd-primary {
-            --bd-violet-bg: #712cf9;
+            --bd-violet-bg: #FF1744;
             --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
             --bs-btn-font-weight: 600;
             --bs-btn-color: var(--bs-white);
             --bs-btn-bg: var(--bd-violet-bg);
             --bs-btn-border-color: var(--bd-violet-bg);
             --bs-btn-hover-color: var(--bs-white);
-            --bs-btn-hover-bg: #6528e0;
-            --bs-btn-hover-border-color: #6528e0;
+            --bs-btn-hover-bg: #FF1744;
+            --bs-btn-hover-border-color: #FF1744;
             --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
             --bs-btn-active-color: var(--bs-btn-hover-color);
-            --bs-btn-active-bg: #5a23c8;
-            --bs-btn-active-border-color: #5a23c8;
+            --bs-btn-active-bg: #FF1744;
+            --bs-btn-active-border-color: #FF1744;
         }
 
         .bd-mode-toggle {
@@ -173,6 +173,67 @@
             background-color: #495057;
             border-color: #495057;
             color: white;
+        }
+                /* Force text colors to be darker and readable */
+        .text-muted,
+        p.text-muted {
+            color: #2d3748 !important;
+        }
+
+        .text-body-secondary {
+            color: #2d3748 !important;
+        }
+
+        .card-text.text-muted {
+            color: #4a5568 !important;
+        }
+
+        footer p {
+            color: #111111 !important;
+        }
+
+        .card-body .text-muted {
+            color: #4a5568 !important;
+        }
+                /* Make text inside dark cards white */
+        .card-body .card-text,
+        .card-body p,
+        .card-body h5 {
+            color: #ffffff !important;
+        }
+
+        /* Keep the subtitle text readable */
+        .card-body .text-muted,
+        .card-body p.text-muted {
+            color: #d1d5db !important;
+        }
+
+        /* But keep the text OUTSIDE cards dark */
+        .container > p.text-muted,
+        .text-center.text-muted {
+            color: #2d3748 !important;
+        }
+                /* Make Quick Navigation heading dark */
+        .card-body h3 {
+            color: #111111 !important;
+        }
+                /* Make phone numbers and h3 headings in dark cards visible */
+        .card-body h3,
+        .hotline-card h3 {
+            color: #ffffff !important;
+        }
+
+        /* But keep h3 in light cards dark */
+        .bg-light h3 {
+            color: #111111 !important;
+        }
+                /* Make footer links red */
+        footer a {
+            color: #e63946 !important;
+        }
+
+        footer a:hover {
+            color: #bb111f !important;
         }
     </style>
 </head>
@@ -428,9 +489,7 @@
         </footer>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+    
 </body>
 
 </html>
