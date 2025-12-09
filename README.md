@@ -1,8 +1,9 @@
-**Anti Sexual Abuse Education Game**
-Objective:
+# Anti Sexual Abuse Education Game
+
+**Objective:**
 Raise awareness on the issue of sexual abuse to better prepare parents, children, and teachers for those challenges.
 
-Files:
+**Files:**
 - App files in child-safety-game/app/
 - Launch by opening index.html file on live server
 - CSS directory contains all formatting
