@@ -1,0 +1,280 @@
+/* Aligned with https://shreyakumar-nd.github.io/humantraffickingdataproject/ — PDF design tokens */
+:root {
+    --nd-red: #e63946;
+    --nd-red-hover: #bb111f;
+    --nd-white: #ffffff;
+    --nd-black: #111111;
+    --nd-gray-text: #444444;
+    --nd-gray-muted: #555555;
+    --nd-gray-label: #888888;
+    --nd-border: #dddddd;
+    --nd-surface-alt: #f9f9f9;
+    --nd-page-bg: #f5f5f5;
+    --nd-warning-bg: #e8e8e8;
+}
+
+html {
+    scroll-padding-top: 5.5rem;
+}
+
+body.site-body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: var(--nd-page-bg);
+    color: var(--nd-black);
+    line-height: 1.6;
+}
+
+/* —— Header (light bar, editorial — not Bootstrap dark) —— */
+.site-header {
+    background: var(--nd-white) !important;
+    border-bottom: 1px solid var(--nd-border);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+}
+
+.site-header .navbar-brand {
+    color: var(--nd-black) !important;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.site-header .nav-link {
+    color: var(--nd-black) !important;
+    font-weight: 500;
+    text-decoration: none !important;
+}
+
+.site-header .nav-link:hover,
+.site-header .nav-link:focus {
+    color: var(--nd-red) !important;
+}
+
+.site-header .navbar-toggler {
+    border-color: var(--nd-border);
+}
+
+/* Dark hamburger on light navbar (Bootstrap default assumes dark navbar) */
+.site-header .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 33, 33, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* —— Hero (reference: section-black hero-section) —— */
+.hero-nd {
+    position: relative;
+    min-height: min(92vh, 820px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 1.5rem 5rem;
+    background: var(--nd-white);
+    text-align: center;
+}
+
+.hero-nd .hero-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-site-title {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--nd-gray-muted);
+    margin: 0 0 0.75rem;
+}
+
+.hero-nd h1 {
+    font-size: clamp(2rem, 5vw, 3.05rem);
+    font-weight: 700;
+    color: var(--nd-black);
+    letter-spacing: -1px;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+}
+
+.hero-subheading {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--nd-gray-text);
+    max-width: 42em;
+    margin: 0 auto 1.5rem;
+}
+
+.hero-trigger-warning {
+    background-color: var(--nd-warning-bg);
+    border-radius: 10px;
+    padding: 1.1rem 1.5rem;
+    max-width: 660px;
+    margin: 2.5rem auto 0;
+    text-align: center;
+}
+
+.hero-trigger-warning p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin: 0;
+    color: #333333;
+}
+
+.hero-trigger-warning strong {
+    color: var(--nd-black);
+}
+
+.scroll-down-link {
+    position: absolute;
+    bottom: 1.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--nd-black) !important;
+    text-decoration: none !important;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    animation: nd-scroll-pulse 1.5s ease-in-out infinite;
+}
+
+.scroll-down-link:hover {
+    color: var(--nd-red) !important;
+}
+
+@keyframes nd-scroll-pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* —— Surfaces —— */
+.section-surface {
+    background: var(--nd-white);
+}
+
+.section-surface-alt {
+    background: var(--nd-surface-alt);
+}
+
+.site-body .display-4,
+.site-body h2.featurette-heading,
+.site-body .marketing h2 {
+    color: var(--nd-black) !important;
+}
+
+.site-body .lead,
+.site-body .marketing p {
+    color: var(--nd-gray-text) !important;
+}
+
+.site-body .text-body-secondary,
+.site-body .text-muted {
+    color: var(--nd-gray-muted) !important;
+}
+
+/* Inline links */
+.site-body main a:not(.btn):not(.scroll-down-link) {
+    color: var(--nd-red) !important;
+    text-decoration: underline;
+}
+
+.site-body main a:not(.btn):not(.scroll-down-link):hover {
+    color: var(--nd-red-hover) !important;
+}
+
+/* Buttons — primary CTA = brand red */
+.btn-nd-primary {
+    background-color: var(--nd-red) !important;
+    border-color: var(--nd-red) !important;
+    color: var(--nd-white) !important;
+    font-weight: 600;
+    padding: 0.65rem 1.35rem;
+    border-radius: 8px;
+    text-decoration: none !important;
+}
+
+.btn-nd-primary:hover {
+    background-color: var(--nd-red-hover) !important;
+    border-color: var(--nd-red-hover) !important;
+    color: var(--nd-white) !important;
+}
+
+/* Secondary / outline for external “Learn more” style */
+.btn-nd-dark {
+    background-color: #222222 !important;
+    border-color: #222222 !important;
+    color: var(--nd-white) !important;
+    font-weight: 500;
+    text-decoration: none !important;
+    border-radius: 8px;
+}
+
+.btn-nd-dark:hover {
+    background-color: #111111 !important;
+    border-color: #111111 !important;
+    color: var(--nd-white) !important;
+}
+
+/* Role cards */
+.role-card {
+    background: var(--nd-white);
+    border: 1px solid var(--nd-border);
+    border-radius: 10px;
+    padding: 2rem 1.5rem;
+    height: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.role-card:hover {
+    border-left: 4px solid var(--nd-red);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.role-card h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--nd-black);
+    margin-top: 1rem;
+}
+
+.role-card p {
+    font-size: 1.05rem;
+    color: var(--nd-gray-text);
+}
+
+.role-card .rounded-circle {
+    object-fit: cover;
+    border: 2px solid var(--nd-border);
+}
+
+/* Featurette band */
+.featurette-band {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+}
+
+.divider-nd {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #d0d0d0, transparent);
+    margin: 0;
+    border: 0;
+}
+
+.site-footer {
+    background: var(--nd-white);
+    border-top: 1px solid var(--nd-border);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.site-footer p {
+    color: var(--nd-gray-text);
+}
+
+.rounded-circle {
+    object-fit: cover;
+}

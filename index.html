@@ -1,335 +1,85 @@
 <!doctype html>
 <html lang="en" data-bs-theme="light">
 
-
-<style>
-    .rounded-circle {
-        object-fit: cover;
-    }
-    body, html {
-        background-color: #ffffff !important;
-    }
-    html {
-        scroll-padding-top: 5.5rem;
-    }
-
-    body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        background: #ffffff;
-        color: #111111;
-        line-height: 1.6;
-    }
-        /* Make navbar text white */
-    .navbar a,
-    .navbar-brand,
-    .nav-link {
-        color: #ffffff !important;
-    }
-    /* Make carousel text white */
-    .carousel-caption h1,
-    .carousel-caption h5,
-    .carousel-caption p {
-        color: #ffffff !important;
-    }
-
-    .navbar a:hover,
-    .nav-link:hover {
-        color: #e0e0e0 !important;
-    }
-    /* Make button text white */
-    .btn,
-    .btn-primary,
-    .btn-secondary,
-    .btn-lg {
-        color: #ffffff !important;
-    }
-
-    .btn:hover,
-    .btn-primary:hover,
-    .btn-secondary:hover {
-        color: #ffffff !important;
-    }
-
-    h1, h2 {
-        color: #111111;
-        font-weight: 600;
-    }
-        /* Main content text colors */
-    .container p,
-    .container h2,
-    .featurette-heading,
-    .lead,
-    footer p {
-        color: #111111 !important;  /* Dark grey/black for main text */
-    }
-
-    .text-body-secondary {
-        color: #333e46 !important;  /* Lighter grey for secondary text */
-    }
-
-    .text-muted {
-        color: #333e46 !important;  /* Lighter grey for muted text */
-    }
-
-    a {
-        color: #e63946 !important;
-    }
-
-    a:hover {
-        color: #bb111f !important;
-    }
-
-    .btn-secondary {
-        background-color: #e63946;
-        border-color: #e63946;
-    }
-
-    .btn-secondary:hover {
-        background-color: #bb111f;
-        border-color: #bb111f;
-    }
-</style>
-
 <head>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.122.0">
-    <title>Carousel Template · Bootstrap v5.3</title>
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <meta name="description" content="Interactive online safety games for parents, children, and educators.">
+    <title>Online Safety Game</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-    <link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
-    <link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
-    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
-    <meta name="theme-color" content="#712cf9">
-    <style>
-                /* Make carousel text bigger */
-        .carousel-caption h1 {
-            font-size: 3.8rem !important;  /* Makes h1 bigger */
-        }
-
-        .carousel-caption p {
-            font-size: 1.5rem !important;  /* Makes paragraph text bigger */
-        }
-
-        .carousel .btn-lg {
-            font-size: 1.5rem !important;  /* Makes button text bigger */
-        }
-                /* Change "Learn More" buttons in carousel to dark grey */
-        .carousel .btn-primary,
-        .carousel .btn-lg {
-            background-color: #333333 !important;
-            border-color: #333333 !important;
-            color: #ffffff !important;
-        }
-
-        .carousel .btn-primary:hover,
-        .carousel .btn-lg:hover {
-            background-color: #1a1a1a !important;
-            border-color: #1a1a1a !important;
-            color: #ffffff !important;
-        } 
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-
-        .b-example-divider {
-            width: 100%;
-            height: 3rem;
-            background-color: #ffffff;
-            border: #ffffff;
-            border-width: 1px 0;
-            box-shadow: inset 0 .5em 1.5em #ffffff, inset 0 .125em .5em #ffffff;
-        }
-
-        .b-example-vr {
-            flex-shrink: 0;
-            width: 1.5rem;
-            height: 100vh;
-        }
-
-        .bi {
-            vertical-align: -.125em;
-            fill: currentColor;
-        }
-
-        .nav-scroller {
-            position: relative;
-            z-index: 2;
-            height: 2.75rem;
-            overflow-y: hidden;
-        }
-
-        .nav-scroller .nav {
-            display: flex;
-            flex-wrap: nowrap;
-            padding-bottom: 1rem;
-            margin-top: -1px;
-            overflow-x: auto;
-            text-align: center;
-            white-space: nowrap;
-            -webkit-overflow-scrolling: touch;
-        }
-                /* Force secondary text to be darker */
-        .text-body-secondary,
-        span.text-body-secondary,
-        .featurette-heading .text-body-secondary {
-            color: #707e98 !important;  /* Much darker grey */
-        }
-
-        .text-muted,
-        p.text-muted,
-        .lead.text-muted {
-            color: #707e98 !important;  /* Much darker grey */
-        }
-
-        
-    </style>
-    <link href="https://getbootstrap.com/docs/5.3/examples/carousel/carousel.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/site-theme.css">
 </head>
 
-<body><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-        <symbol id="check2" viewBox="0 0 16 16">
-            <path
-                d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
-        </symbol>
-        <symbol id="circle-half" viewBox="0 0 16 16">
-            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
-        </symbol>
-        <symbol id="moon-stars-fill" viewBox="0 0 16 16">
-            <path
-                d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
-            <path
-                d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
-        </symbol>
-        <symbol id="sun-fill" viewBox="0 0 16 16">
-            <path
-                d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
-        </symbol>
-    </svg>
-    
-    <header data-bs-theme="light">
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <div class="container-fluid"><a class="navbar-brand" href="#">Online Safety Game</a><button class="navbar-toggler"
-                    type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+<body class="site-body">
+    <header>
+        <nav class="navbar navbar-expand-md fixed-top site-header">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">Online Safety Game</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                     aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span
                         class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="./index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#play-game">Play the Game</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./pages/resources.html">Resources</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pages/resources.html">Resources</a></li>
                     </ul>
-                    
                 </div>
             </div>
         </nav>
     </header>
     <main>
-        <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
-            <div class="carousel-indicators"><button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0"
-                    class="active" aria-current="true" aria-label="Slide 1"></button><button type="button"
-                    data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button><button
-                    type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button></div>
-            <div class="carousel-inner">
-                <div class="carousel-item active"><img 
-                    src="https://static.vecteezy.com/system/resources/thumbnails/061/438/037/small/vibrant-red-satin-fabric-abstract-background-texture-luxurious-shiny-silk-cloth-wallpaper-with-smooth-flowing-waves-and-folds-photo.jpeg"
-                    class="bd-placeholder-img w-100" 
-                    alt="Slide 1 background">
-                        <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-                    </svg>
-                    <div class="container">
-                        <div class="carousel-caption text-start">
-                            <h1>Human Trafficking is one of the most under reported crimes in America.</h1>
-                    
-                            <p><a class="btn btn-lg btn-primary" href="https://nij.ojp.gov/topics/articles/gaps-reporting-human-trafficking-incidents-result-significant-undercounting">Learn More</a></p>
-                        </div>
-                    </div>
+        <section class="hero-nd" aria-label="Introduction">
+            <div class="hero-inner">
+                <p class="hero-site-title">Child safety &amp; online education</p>
+                <h1>Practice the choices that keep young people safer online.</h1>
+                <p class="hero-subheading">These simulations put you in the role of a parent, a young person, or a teacher—so you can explore realistic situations and learn protective steps in a low-risk space.</p>
+                <div class="hero-trigger-warning" role="note">
+                    <p><strong>Note:</strong> Topics include grooming, exploitation, and online harm. We present them for education, not shock. Younger players may want a trusted adult nearby.</p>
                 </div>
-                <div class="carousel-item"><img 
-                    src="https://static.vecteezy.com/system/resources/thumbnails/061/438/037/small/vibrant-red-satin-fabric-abstract-background-texture-luxurious-shiny-silk-cloth-wallpaper-with-smooth-flowing-waves-and-folds-photo.jpeg"
-                    class="bd-placeholder-img w-100" 
-                    alt="Slide 1 background">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h1>Human Trafficking is the second most profitable illegal industry in the US.</h1>
-                            <p>It generates $236 billion in illegal profits annually worldwide.</p>
-                            <p><a class="btn btn-lg btn-primary" href="https://www.ilo.org/topics/forced-labour-modern-slavery-and-trafficking-persons/data-and-research-forced-labour">Learn more</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item"><img 
-                    src="https://static.vecteezy.com/system/resources/thumbnails/061/438/037/small/vibrant-red-satin-fabric-abstract-background-texture-luxurious-shiny-silk-cloth-wallpaper-with-smooth-flowing-waves-and-folds-photo.jpeg"
-                    class="bd-placeholder-img w-100" 
-                    alt="Slide 1 background">
+            </div>
+            <a href="#play-game" class="scroll-down-link" aria-label="Scroll to games"><span>↓</span> Choose a role to begin <span>↓</span></a>
+        </section>
 
-                        <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-                    </svg>
-                    <div class="container">
-                        <div class="carousel-caption text-end">
-                            <h1>Over 80% of sex trafficking prosecutions in the US involved online advertising in 2020</h1>
-                            <p>That's a lot.</p>
-                            <p><a class="btn btn-lg btn-primary" href="https://www.unodc.org/unodc/human-trafficking/Webstories2021/the-role-of-technology-in-human-trafficking.html">Learn More</a></p>
+        <section class="section-surface-alt featurette-band" id="play-game">
+            <div class="container marketing">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 fw-bold">Play the game</h2>
+                    <p class="lead text-muted mb-0">Pick a perspective—each path is a short interactive story.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <div class="role-card text-center h-100 d-flex flex-column align-items-center">
+                            <img src="./images/parent.jpeg" width="190" height="150" alt="Parent icon">
+                            <h2>Parent</h2>
+                            <p class="flex-grow-1">Suppose you're a parent to a child curious about the internet. Can you keep them safe from online predators?</p>
+                            <a class="btn btn-nd-primary" href="pages/parent.html">Play the game &raquo;</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="role-card text-center h-100 d-flex flex-column align-items-center">
+                            <img src="./images/child.jpeg" width="140" height="140" alt="Child icon">
+                            <h2>Child</h2>
+                            <p class="flex-grow-1">Suppose you're a child ready to explore the internet. Can you make smart decisions about who to trust?</p>
+                            <a class="btn btn-nd-primary" href="pages/child.html">Play the game &raquo;</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="role-card text-center h-100 d-flex flex-column align-items-center">
+                            <img src="./images/teacher.jpeg" width="180" height="140" alt="Teacher icon">
+                            <h2>Teacher</h2>
+                            <p class="flex-grow-1">Suppose you're a teacher in charge of a class of students. Can you make the right choices to keep your class safe?</p>
+                            <a class="btn btn-nd-primary" href="pages/teacher.html">Play the game &raquo;</a>
                         </div>
                     </div>
                 </div>
-            </div><button class="carousel-control-prev" type="button" data-bs-target="#myCarousel"
-                data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span
-                    class="visually-hidden">Previous</span></button><button class="carousel-control-next" type="button"
-                data-bs-target="#myCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"
-                    aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
-        </div>
-        <div class="container my-5" id="play-game">
-            <div class="text-center">
-                <h2 class="display-4 fw-bold">Play the Game!</h2>
-                <p class="lead text-muted">Click a role to assume below</p>
             </div>
-        </div>
-        <div class="container marketing">
-            <div class="row">
-                <div class="col-lg-4"><img src="https://t3.ftcdn.net/jpg/01/66/95/66/360_F_166956685_tcsnZWJqDZcAfOdVlCqAeQXH3DnDiWQR.jpg" class="rounded-circle" width="140" height="140" alt="Parent icon">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-                    </svg>
-                    <h2 class="fw-normal">Parent</h2>
-                    <p>Suppose you're a parent to a child curious about the internet. Can you keep them safe from online predators? Play the game to find out! </p>
-                    <p><a class="btn btn-secondary" href="pages/parent.html">Play the game! &raquo;</a></p>
-                </div>
-                <div class="col-lg-4"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjuIYyK5N4RNo6cK4CU6A_fgdn-ZoOtX3v-w&s" class="rounded-circle" width="140" height="140" alt="Child icon">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-                    </svg>
-                    <h2 class="fw-normal">Child</h2>
-                    <p>Suppose you're a child ready to explore the internet. Can you make smart decisions about who to trust? Play the game to find out!</p>
-                    <p><a class="btn btn-secondary" href="pages/child.html">Play the game! &raquo;</a></p>
-                </div>
-                <div class="col-lg-4"><img src="https://static.vecteezy.com/system/resources/previews/055/572/562/non_2x/a-cartoon-teacher-standing-in-front-of-a-blackboard-white-background-free-vector.jpg" class="rounded-circle" width="140" height="140" alt="Teacher icon">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-                    </svg>
-                    <h2 class="fw-normal">Teacher</h2>
-                    <p>Supposed you're a teacher in charge of a class of students. Can you make the right choices to keep your class safe from? Play the game to find out!</p>
-                    <p><a class="btn btn-secondary" href="pages/teacher.html">Play the game! &raquo;</a></p>
-                </div>
-            </div>
-            <hr class="featurette-divider">
+        </section>
+
+        <section class="section-surface featurette-band">
+            <div class="container">
+            <hr class="divider-nd">
             <div class="row featurette">
                 <div class="col-md-7">
                     <h2 class="featurette-heading fw-normal lh-1">Want to learn more about online safety? <span
@@ -344,7 +94,12 @@
                     alt="Cybersecurity illustration"></a>
                 </div>
             </div>
-            <hr class="featurette-divider">
+            </div>
+        </section>
+
+        <section class="section-surface-alt featurette-band">
+            <div class="container">
+            <hr class="divider-nd">
             <div class="row featurette">
                 <div class="col-md-7 order-md-2">
                     <h2 class="featurette-heading fw-normal lh-1">Looking for resources in online safety? <span
@@ -358,7 +113,12 @@
                     height="500" 
                     alt="Cybersecurity illustration"></a></div>
             </div>
-            <hr class="featurette-divider">
+            </div>
+        </section>
+
+        <section class="section-surface featurette-band">
+            <div class="container">
+            <hr class="divider-nd">
             <div class="row featurette">
                 <div class="col-md-7">
                     <h2 class="featurette-heading fw-normal lh-1">Want to learn how to stay away from predators? <span
@@ -372,14 +132,19 @@
                     height="500" 
                     alt="Cybersecurity illustration"></a></div>
             </div>
-            <hr class="featurette-divider">
-        </div>
-        <footer class="container">
-            <p class="float-end"><a href="#">Back to top</a></p>
-            <p>&copy; 2025 CSE Service Project &middot; <a href="#">Privacy</a>&middot; <a href="#">Terms</a></p>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <div class="container">
+                <p class="float-end mb-0"><a href="#">Back to top</a></p>
+                <p class="mb-0">&copy; 2025 CSE Service Project &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+            </div>
         </footer>
     </main>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -12,9 +12,9 @@ body {
     line-height: 1.6;
 }
 
-/* TWINE GAME LAYOUT (child / teacher / parent) */
+/* TWINE GAME LAYOUT (child / teacher / parent) — matches ND data project palette */
 body.twine-game {
-    background: radial-gradient(circle at top, #a9d6ff 0, #d3e9ff 30%, #f5f5f5 70%);
+    background: #f5f5f5;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -28,29 +28,31 @@ body.twine-game .twine-back-link {
     top: 1.5rem;
     left: 1.5rem;
     z-index: 10;
-    padding: 0.4rem 0.9rem;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.9);
-    color: #1f6dff !important;
+    padding: 0.45rem 1rem;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #e63946 !important;
     font-size: 0.9rem;
     font-weight: 600;
-    text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    border: 1px solid rgba(31, 109, 255, 0.25);
+    text-decoration: none !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    border: 1px solid #dddddd;
 }
 
 body.twine-game .twine-back-link:hover {
     background: #ffffff;
+    color: #bb111f !important;
+    border-color: #e63946;
 }
 
 body.twine-game tw-story {
     max-width: 900px;
     width: 100%;
     background: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
     padding: 2.5rem 2.75rem;
-    border: 2px solid #c7e2ff;
+    border: 1px solid #dddddd;
 }
 
 body.twine-game tw-passage {
@@ -78,24 +80,25 @@ body.twine-game tw-link {
     display: inline-block;
     margin: 0.4rem 0.4rem 0.4rem 0;
     padding: 0.65rem 1.2rem;
-    border-radius: 999px;
-    background: linear-gradient(135deg, #4f9dff, #1f6dff);
+    border-radius: 8px;
+    background: #e63946;
     color: #ffffff !important;
     font-weight: 600;
-    text-decoration: none;
-    box-shadow: 0 5px 14px rgba(79, 157, 255, 0.4);
+    text-decoration: none !important;
+    box-shadow: 0 4px 12px rgba(230, 57, 70, 0.25);
     transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.2s ease;
     cursor: pointer;
 }
 
 body.twine-game tw-link:hover {
     transform: translateY(-1px);
-    box-shadow: 0 7px 20px rgba(79, 157, 255, 0.5);
+    background: #bb111f;
+    box-shadow: 0 6px 16px rgba(230, 57, 70, 0.35);
 }
 
 body.twine-game tw-link:active {
     transform: translateY(0);
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Restart / back-to-start area */
