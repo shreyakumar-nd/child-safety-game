@@ -75,6 +75,24 @@ body.twine-game tw-passage p {
     margin-bottom: 1rem;
 }
 
+/* Resource-page card styling for tagged Twine passages */
+body.twine-game tw-passage[tags~="resource-card"] {
+    margin: 0 0 1.5rem 0;
+    padding: 1.5rem;
+    border: none;
+    border-left: 4px solid #e63946;
+    border-radius: 0.375rem;
+    background-color: #ffffff;
+    color: #111111;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.twine-game tw-passage[tags~="resource-card"]:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
 /* Choice links styled as buttons */
 body.twine-game tw-link {
     display: inline-block;
