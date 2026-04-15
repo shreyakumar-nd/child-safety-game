@@ -78,6 +78,11 @@ body.twine-game tw-passage p {
 /* Resource-page card styling for tagged Twine passages */
 body.twine-game tw-passage[tags~="resource-card"] {
     margin: 0 0 1.5rem 0;
+}
+
+body.twine-game tw-passage[tags~="resource-card"] .resource-stat-card {
+    display: block;
+    margin: 1rem 0 1.5rem 0;
     padding: 1.5rem;
     border: none;
     border-left: 4px solid #e63946;
@@ -88,9 +93,13 @@ body.twine-game tw-passage[tags~="resource-card"] {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-body.twine-game tw-passage[tags~="resource-card"]:hover {
+body.twine-game tw-passage[tags~="resource-card"] .resource-stat-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+body.twine-game tw-passage[tags~="resource-card"] .resource-stat-card > :last-child {
+    margin-bottom: 0;
 }
 
 /* Choice links styled as buttons */
