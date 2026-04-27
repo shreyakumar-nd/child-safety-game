@@ -75,6 +75,17 @@ body.twine-game tw-passage p {
     margin-bottom: 1rem;
 }
 
+/* Normalize spacing inside passages (text + choices) */
+body.twine-game tw-passage {
+    white-space: normal;
+}
+
+body.twine-game tw-passage br {
+    display: block;
+    content: "";
+    margin: 0.35rem 0;
+}
+
 /* Resource-page card styling for tagged Twine passages */
 body.twine-game tw-passage[tags~="resource-card"] {
     margin: 0 0 1.5rem 0;
@@ -115,6 +126,19 @@ body.twine-game tw-link {
     box-shadow: 0 4px 12px rgba(230, 57, 70, 0.25);
     transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.2s ease;
     cursor: pointer;
+}
+
+/* Most passages use standalone choice links; make those stack cleanly */
+body.twine-game tw-passage > tw-link {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0.6rem 0;
+}
+
+/* If multiple links are adjacent, keep spacing consistent */
+body.twine-game tw-passage > tw-link + tw-link {
+    margin-top: 0.6rem;
 }
 
 body.twine-game tw-link:hover {
