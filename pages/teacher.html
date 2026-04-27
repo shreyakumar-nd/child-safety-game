@@ -9,9 +9,27 @@
 <link rel="stylesheet" href="../css/main.css">
 </head>
 <body class="twine-game">
-<a href="../index.html" class="twine-back-link">← Back</a>
+<a href="teacher.html?restart=1" class="twine-back-link">Restart Game</a>
+<button type="button" class="twine-prev-button">Previous</button>
+<a href="../index.html#play-game" class="twine-home-link">Exit Game</a>
+<script>
+if (new URLSearchParams(window.location.search).has('restart')) {
+  sessionStorage.removeItem('Saved Session');
+  history.replaceState(null, '', window.location.pathname);
+}
+document.addEventListener('click', function (event) {
+  if (!event.target.matches('.twine-prev-button')) {
+    return;
+  }
+
+  var undo = document.querySelector('tw-icon[alt="Undo"]');
+  if (undo && undo.style.visibility !== 'hidden') {
+    undo.click();
+  }
+});
+</script>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Teacher Gameplay.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Teacher Gameplay" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="D4E4A1B2-C3D4-4E5F-A6B7-C8D9E0F1A2B3" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="100,100" size="100,100">You are a middle school teacher. This simulation will test your ability to recognize and respond to signs of online grooming.
+<tw-storydata name="Teacher Gameplay" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="D4E4A1B2-C3D4-4E5F-A6B7-C8D9E0F1A2B3" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="intro-passage" position="100,100" size="100,100">You are a middle school teacher. This simulation will test your ability to recognize and respond to signs of online grooming.
 
 Your choices matter; a student&#39;s safety depends on them. Each decision earns points. At the end, you&#39;ll receive a score and guidance on best practices.
 
@@ -24,17 +42,17 @@ What do you do?
 [[Ignore it. It&#39;s not my business.|Bad 1A]]
 [[Confiscate her phone publicly.|Bad 1B]]
 [[Engage in a private conversation after class.|Good 1]]
-</tw-passagedata><tw-passagedata pid="3" name="Bad 1A" tags="" position="60,260" size="100,100">Be careful. You do this and Maya continues unsupervised contact. The grooming intensifies over the following weeks. Instead, you should have engaged in a private conversation after class.
+</tw-passagedata><tw-passagedata pid="3" name="Bad 1A" tags="" position="60,260" size="100,100">This choice has risks. You do this and Maya continues unsupervised contact. The grooming intensifies over the following weeks. Instead, you should have engaged in a private conversation after class.
 
 You reconsider. You decide to speak with Maya privately after class.
 
 [[Continue|Scene 2 Entry]]
-</tw-passagedata><tw-passagedata pid="4" name="Bad 1B" tags="" position="260,260" size="100,100">Poor choice. You do this and Maya becomes defensive and shuts down. She deletes the evidence and no trust is built. Instead, you should have engaged in a private conversation after class.
+</tw-passagedata><tw-passagedata pid="4" name="Bad 1B" tags="" position="260,260" size="100,100">This choice has serious risks. You do this and Maya becomes defensive and shuts down. She deletes the messages and no trust is built. Instead, you should have engaged in a private conversation after class.
 
 You reconsider. You decide to speak with Maya privately after class.
 
 [[Continue|Scene 2 Entry]]
-</tw-passagedata><tw-passagedata pid="5" name="Good 1" tags="" position="460,260" size="100,100">Good choice. You build trust and open a dialogue. Maya feels safe with you. She&#39;s more likely to share what&#39;s really going on.
+</tw-passagedata><tw-passagedata pid="5" name="Good 1" tags="" position="460,260" size="100,100">Helpful choice. You build trust and open a dialogue. Maya feels safe with you. She&#39;s more likely to share what&#39;s really going on.
 
 [[Continue|Scene 2 Entry]]
 </tw-passagedata><tw-passagedata pid="6" name="Scene 2 Entry" tags="resource-card" position="260,400" size="100,100">In this private conversation, Maya shares she has a new &quot;online friend&quot; she met on a gaming app three months ago.
@@ -50,16 +68,16 @@ How do you respond?
 [[Dismiss it and say &quot;Just be careful.&quot;|Bad 2B]]
 [[Ask her open, trauma-informed questions.|Good 2]]
 [[Immediately call the police without talking to Maya.|Fair 2D]]
-</tw-passagedata><tw-passagedata pid="8" name="Fair 2A" tags="" position="60,680" size="100,100">Ok choice. Maya feels judged and partially shuts down, but some warning is shared. Consider asking open questions to keep her talking and build trust.
+</tw-passagedata><tw-passagedata pid="8" name="Fair 2A" tags="" position="60,680" size="100,100">Partly helpful choice. Maya feels judged and partially shuts down, but some warning is shared. Consider asking open questions to keep her talking and build trust.
 
 [[Continue|Scene 3 Entry]]
-</tw-passagedata><tw-passagedata pid="9" name="Bad 2B" tags="" position="200,680" size="100,100">Poor choice. Maya minimizes the risk and continues contact. She doesn&#39;t feel the weight of the situation. Consider asking open, non-judgmental questions.
+</tw-passagedata><tw-passagedata pid="9" name="Bad 2B" tags="" position="200,680" size="100,100">This choice has serious risks. Maya minimizes the risk and continues contact. She doesn&#39;t feel the weight of the situation. Consider asking open, non-judgmental questions.
 
 [[Continue|Scene 3 Entry]]
-</tw-passagedata><tw-passagedata pid="10" name="Good 2" tags="" position="340,680" size="100,100">Excellent. You create a safe space. Maya opens up and trusts you with more details. By asking //how// she feels rather than what she should do, you keep the conversation going.
+</tw-passagedata><tw-passagedata pid="10" name="Good 2" tags="" position="340,680" size="100,100">Strong choice. You create a safe space. Maya opens up and trusts you with more details. By asking //how// she feels rather than what she should do, you keep the conversation going.
 
 [[Continue|Scene 3 Entry]]
-</tw-passagedata><tw-passagedata pid="11" name="Fair 2D" tags="" position="480,680" size="100,100">Fair choice. This is premature, as reporting requires evidence and assessment. Maya may become defensive and shut down. Consider asking open questions to gather more information first.
+</tw-passagedata><tw-passagedata pid="11" name="Fair 2D" tags="" position="480,680" size="100,100">Partly helpful choice. This is premature, as reporting requires careful documentation and assessment. Maya may become defensive and shut down. Consider asking open questions to gather more information first.
 
 [[Continue|Scene 3 Entry]]
 </tw-passagedata><tw-passagedata pid="12" name="Scene 3 Entry" tags="resource-card" position="260,840" size="100,100">From asking open questions, you learn how they met, their communication patterns, signs of gift-giving (he&#39;s sent her $50 in gaming currency), and that he&#39;s been pushing to move from the game&#39;s chat to a private messaging app.
@@ -77,16 +95,16 @@ What is your next step?
 [[Ask Maya how she feels about meeting him.|Good 3B]]
 [[Tell Maya directly that this is grooming.|Fair 3C]]
 [[Involve the school counselor with Maya&#39;s awareness.|Good 3D]]
-</tw-passagedata><tw-passagedata pid="14" name="Fair 3A" tags="" position="60,1120" size="100,100">Fair choice. Her safety matters, but going behind her back breaks trust. Maya may feel betrayed and withdraw — making future disclosures much less likely. Involve her in the process whenever possible.
+</tw-passagedata><tw-passagedata pid="14" name="Fair 3A" tags="" position="60,1120" size="100,100">Partly helpful choice. Her safety matters, but going behind her back breaks trust. Maya may feel betrayed and withdraw — making future disclosures much less likely. Involve her in the process whenever possible.
 
 [[Continue|Scene 4 Entry]]
-</tw-passagedata><tw-passagedata pid="15" name="Good 3B" tags="" position="220,1120" size="100,100">Good choice. By asking Maya how she //feels// about the meeting, you validate her emotions while helping her articulate her own doubts. She begins to recognize the dynamic herself — far more powerful than being told.
+</tw-passagedata><tw-passagedata pid="15" name="Good 3B" tags="" position="220,1120" size="100,100">Helpful choice. By asking Maya how she //feels// about the meeting, you validate her emotions while helping her articulate her own doubts. She begins to recognize the dynamic herself — far more powerful than being told.
 
 [[Continue|Scene 4 Entry]]
-</tw-passagedata><tw-passagedata pid="16" name="Fair 3C" tags="" position="380,1120" size="100,100">Fair choice. Education is vital, but labeling the situation too early can make Maya defensive of him. Lead with her feelings first, then gently introduce the language and patterns of grooming.
+</tw-passagedata><tw-passagedata pid="16" name="Fair 3C" tags="" position="380,1120" size="100,100">Partly helpful choice. Education is vital, but labeling the situation too early can make Maya defensive of him. Lead with her feelings first, then gently introduce the language and patterns of grooming.
 
 [[Continue|Scene 4 Entry]]
-</tw-passagedata><tw-passagedata pid="17" name="Good 3D" tags="" position="540,1120" size="100,100">Excellent. Involving the right support system while keeping Maya informed preserves trust and ensures proper intervention. She doesn&#39;t feel ambushed or betrayed.
+</tw-passagedata><tw-passagedata pid="17" name="Good 3D" tags="" position="540,1120" size="100,100">Strong choice. Involving the right support system while keeping Maya informed preserves trust and ensures proper intervention. She doesn&#39;t feel ambushed or betrayed.
 
 [[Continue|Scene 4 Entry]]
 </tw-passagedata><tw-passagedata pid="18" name="Scene 4 Entry" tags="resource-card" position="260,1280" size="100,100">You&#39;ve involved the school counselor, **Ms. Rivera**. Maya is present but resistant. She insists //&quot;he&#39;s different&quot;// and //&quot;you just don&#39;t understand.&quot;// The counselor looks to you for support.
@@ -104,16 +122,16 @@ How do you help her understand the risk?
 [[Ask what she would think if her younger sister was in this situation.|Good 4B]]
 [[Tell her she is being naive and he is definitely a predator.|Bad 4C]]
 [[Respect her feelings and let her decide.|Bad 4D]]
-</tw-passagedata><tw-passagedata pid="20" name="Fair 4A" tags="" position="50,1550" size="100,100">Fair choice. Data can be impactful but may feel abstract to a 13-year-old. She may feel like //&quot;that won&#39;t happen to me.&quot;// Pair facts with empathy and personal reflection for greater effect.
+</tw-passagedata><tw-passagedata pid="20" name="Fair 4A" tags="" position="50,1550" size="100,100">Partly helpful choice. Data can be impactful but may feel abstract to a 13-year-old. She may feel like //&quot;that won&#39;t happen to me.&quot;// Pair facts with empathy and personal reflection for greater effect.
 
 [[Continue|Scene 5]]
-</tw-passagedata><tw-passagedata pid="21" name="Good 4B" tags="" position="225,1550" size="100,100">Good choice. Perspective-shifting is powerful. By asking Maya to imagine her sister in the same situation, you help her see the dynamic clearly — without directly attacking her judgment or feelings.
+</tw-passagedata><tw-passagedata pid="21" name="Good 4B" tags="" position="225,1550" size="100,100">Helpful choice. Perspective-shifting is powerful. By asking Maya to imagine her sister in the same situation, you help her see the dynamic clearly — without directly attacking her judgment or feelings.
 
 [[Continue|Scene 5]]
-</tw-passagedata><tw-passagedata pid="22" name="Bad 4C" tags="" position="380,1560" size="100,100">Poor choice. Dismissing her feelings causes Maya to shut down and defend him more strongly. She feels attacked, not protected. Always lead with empathy before introducing warnings.
+</tw-passagedata><tw-passagedata pid="22" name="Bad 4C" tags="" position="380,1560" size="100,100">This choice has serious risks. Dismissing her feelings causes Maya to shut down and defend him more strongly. She feels attacked, not protected. Always lead with empathy before introducing warnings.
 
 [[Continue|Scene 5]]
-</tw-passagedata><tw-passagedata pid="23" name="Bad 4D" tags="" position="540,1560" size="100,100">Poor choice. Maya is 13 and in a vulnerable situation. A trusted adult&#39;s guidance is essential at this stage. Leaving it entirely to her puts her at serious risk of continued contact.
+</tw-passagedata><tw-passagedata pid="23" name="Bad 4D" tags="" position="540,1560" size="100,100">This choice has serious risks. Maya is 13 and in a vulnerable situation. A trusted adult&#39;s guidance is essential at this stage. Leaving it entirely to her puts her at serious risk of continued contact.
 
 [[Continue|Scene 5]]
 </tw-passagedata><tw-passagedata pid="24" name="Scene 5" tags="resource-card" position="260,1720" size="100,100">Final Decision

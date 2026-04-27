@@ -18,7 +18,7 @@ body.twine-game {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     padding: 3rem 1.5rem;
 }
 
@@ -39,9 +39,52 @@ body.twine-game .twine-back-link {
     border: 1px solid #dddddd;
 }
 
+body.twine-game .twine-prev-button {
+    position: fixed;
+    top: 4.7rem;
+    left: 1.5rem;
+    z-index: 10;
+    padding: 0.45rem 1rem;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #666666 !important;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    border: 1px solid #dddddd;
+    cursor: pointer;
+}
+
+body.twine-game .twine-prev-button:hover {
+    color: #e63946 !important;
+    border-color: #e63946;
+}
+
 body.twine-game .twine-back-link:hover {
     background: #ffffff;
     color: #bb111f !important;
+    border-color: #e63946;
+}
+
+body.twine-game .twine-home-link {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 10;
+    padding: 0.45rem 1rem;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #666666 !important;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    border: 1px solid #dddddd;
+}
+
+body.twine-game .twine-home-link:hover {
+    color: #e63946 !important;
     border-color: #e63946;
 }
 
@@ -59,6 +102,12 @@ body.twine-game tw-passage {
     font-size: 1.15rem;
     line-height: 1.9;
     color: #222222;
+}
+
+body.twine-game tw-passage[tags~="intro-passage"] tw-link,
+body.twine-game tw-passage[tags~="story-passage"] tw-link {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 /* Kid-friendly heading and text tweaks */

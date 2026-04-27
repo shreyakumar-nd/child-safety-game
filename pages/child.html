@@ -9,9 +9,27 @@
 <link rel="stylesheet" href="../css/main.css">
 </head>
 <body class="twine-game">
-<a href="../index.html" class="twine-back-link">← Back</a>
+<a href="child.html?restart=1" class="twine-back-link">Restart Game</a>
+<button type="button" class="twine-prev-button">Previous</button>
+<a href="../index.html#play-game" class="twine-home-link">Exit Game</a>
+<script>
+if (new URLSearchParams(window.location.search).has('restart')) {
+  sessionStorage.removeItem('Saved Session');
+  history.replaceState(null, '', window.location.pathname);
+}
+document.addEventListener('click', function (event) {
+  if (!event.target.matches('.twine-prev-button')) {
+    return;
+  }
+
+  var undo = document.querySelector('tw-icon[alt="Undo"]');
+  if (undo && undo.style.visibility !== 'hidden') {
+    undo.click();
+  }
+});
+</script>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Child Game.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Child Game" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="FFE2F818-B9F1-45B9-9210-A851B6CD36E1" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="675,350" size="100,100">Welcome to the Online Safety game! We hope this game helps you make safer, smarter, and more confident decisions when talking to people online. As you play, you will face different situations and choose what to do next, learning how to protect your privacy, recognize warning signs, and know when to ask a trusted adult for help.
+<tw-storydata name="Child Game" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="FFE2F818-B9F1-45B9-9210-A851B6CD36E1" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="intro-passage" position="675,350" size="100,100">This tool shows you common ways bad actors influence or manipulate people, including children online. As you play, you will face different situations. As you choose what to do next, you will learn ways to recognize warning signs, protect your privacy, and know when to ask a trusted adult for help.
 
 [[Continue-&gt;Input Age]]</tw-passagedata><tw-passagedata pid="2" name="Input Age" tags="" position="675,475" size="100,100">What is your age?
 
@@ -28,30 +46,30 @@ On the screen, you see messages from people you know, like your best friend Alex
 
 [[Continue-&gt;Stranger Statistic]]</tw-passagedata><tw-passagedata pid="6" name="Add Later" tags="" position="875,975" size="100,100">You realize that it could have been your friend that has not joined yet.
 
-[[Add User-&gt;User Added]]</tw-passagedata><tw-passagedata pid="7" name="Stranger Statistic" tags="resource-card" position="750,1100" size="100,100">&lt;div class=&quot;resource-stat-card&quot;&gt;&lt;strong&gt;Statistic:&lt;/strong&gt; About 32% of online teens have been contacted by a complete stranger (someone with no connection to them or their friends). &lt;span class=&quot;resource-source&quot;&gt;(Pew Research, 2007)&lt;/span&gt;&lt;/div&gt;
+[[Add User-&gt;User Added]]</tw-passagedata><tw-passagedata pid="7" name="Stranger Statistic" tags="resource-card" position="750,1100" size="100,100">&lt;div class=&quot;resource-stat-card&quot;&gt;&lt;strong&gt;Statistic:&lt;/strong&gt; About 32% of teens online have been messaged by a random person with no connection to them or their friends. &lt;span class=&quot;resource-source&quot;&gt;(Pew Research, 2007)&lt;/span&gt;&lt;/div&gt;
 
 [[Continue-&gt;Play Round]]</tw-passagedata><tw-passagedata pid="8" name="Play Round" tags="" position="750,1225" size="100,100">PixelKnight67 messages you: &quot;I think I go to your school. .... Do you want to play duos?&quot; You play a round with him and finally get a win...
 
 
 [[The user is really good, I definitely want to play with him again.-&gt;Play Yes]]
 
-[[Maybe later, I still dont know who he is.-&gt;Play No]]</tw-passagedata><tw-passagedata pid="9" name="Play Yes" tags="" position="700,1350" size="100,100">Be careful, you dont know who this is. Would you play with a stranger at the park? 
+[[Maybe later, I still don&#39;t know who he is.-&gt;Play No]]</tw-passagedata><tw-passagedata pid="9" name="Play Yes" tags="" position="700,1350" size="100,100">Pause and think: you don&#39;t know who this is. Would you play with a stranger at the park? 
 
 [[Continue-&gt;Credits]]</tw-passagedata><tw-passagedata pid="10" name="Play No" tags="" position="812.5,1350" size="100,100">It&#39;s smart to be wary of online users, remember what they say &quot;stranger danger&quot; right :)
 
-[[Continue-&gt;Credits]]</tw-passagedata><tw-passagedata pid="11" name="Credits" tags="" position="812.5,1475" size="100,100">PixelKnight67 messages you:&quot;I used to go to school with you, but I moved 2 years ago. Let&#39;s a play a round!&quot;. PixelKnight67 gives you credits to buy a new cool avatar to match.
+[[Continue-&gt;Credits]]</tw-passagedata><tw-passagedata pid="11" name="Credits" tags="" position="812.5,1475" size="100,100">PixelKnight67 messages you:&quot;I used to go to school with you, but I moved 2 years ago. Let&#39;s play a round!&quot;. PixelKnight67 gives you credits to buy a new cool avatar to match.
 
 Do you want to accept the credits?
 
-[[Obviously, this is the coolest character and my parents never give me money for my games. Your change your avatar and play another game.-&gt;Credits Yes]]
+[[Obviously, this is the coolest character and my parents never give me money for my games. You change your avatar and play another game.-&gt;Credits Yes]]
 
-[[No, I don&#39;t want to take the users credits. My avatar is fine -&gt;Credits No]]</tw-passagedata><tw-passagedata pid="12" name="Credits Yes" tags="resource-card" position="812.5,1600" size="100,100">Be careful.
+[[No, I don&#39;t want to take the user&#39;s credits. My avatar is fine -&gt;Credits No]]</tw-passagedata><tw-passagedata pid="12" name="Credits Yes" tags="resource-card" position="812.5,1600" size="100,100">Pause and think.
 
-&lt;div class=&quot;resource-stat-card&quot;&gt;&lt;strong&gt;Good choice.&lt;/strong&gt; NCMEC’s CyberTipline received 1,300+ reports in 2024 tied to online groups that befriend kids on gaming platforms—and sometimes offer in-game currency like Robux to pull them into private chats and worse. &lt;span class=&quot;resource-source&quot;&gt;(NCMEC, 2025)&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;resource-stat-card&quot;&gt;&lt;strong&gt;Helpful choice.&lt;/strong&gt; NCMEC’s CyberTipline received 1,300+ reports in 2024 tied to online groups that befriend kids on gaming platforms—and sometimes offer in-game currency like Robux to pull them into private chats and worse. &lt;span class=&quot;resource-source&quot;&gt;(NCMEC, 2025)&lt;/span&gt;&lt;/div&gt;
 
-[[Continue-&gt;Time Lapse]]</tw-passagedata><tw-passagedata pid="13" name="Credits No" tags="resource-card" position="937.5,1600" size="100,100">Good choice.
+[[Continue-&gt;Time Lapse]]</tw-passagedata><tw-passagedata pid="13" name="Credits No" tags="resource-card" position="937.5,1600" size="100,100">Helpful choice.
 
-&lt;div class=&quot;resource-stat-card&quot;&gt;&lt;strong&gt;Good choice.&lt;/strong&gt; NCMEC’s CyberTipline received 1,300+ reports in 2024 tied to online groups that befriend kids on gaming platforms—and sometimes offer in-game currency like Robux to pull them into private chats and worse. &lt;span class=&quot;resource-source&quot;&gt;(NCMEC, 2025)&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;resource-stat-card&quot;&gt;&lt;strong&gt;Helpful choice.&lt;/strong&gt; NCMEC’s CyberTipline received 1,300+ reports in 2024 tied to online groups that befriend kids on gaming platforms—and sometimes offer in-game currency like Robux to pull them into private chats and worse. &lt;span class=&quot;resource-source&quot;&gt;(NCMEC, 2025)&lt;/span&gt;&lt;/div&gt;
 
 [[Continue-&gt;Time Lapse]]</tw-passagedata><tw-passagedata pid="14" name="Time Lapse" tags="" position="812.5,1725" size="100,100">Time Lapse, over the next couple days you have continued to play the game after school with the user. The user is messaging to always play, interrupting your time to do homework or during class at school. You are getting tired and your friends are asking you if everything is good.
 
@@ -61,7 +79,7 @@ How do you respond to your friends?
 
 [[Just been gaming too much I guess-&gt;Im fine]]
 
-[[This person I have playing with online has been bugging me all the time to play. They are really good but I am getting bad sleep becuase of it-&gt;Speak Up]]</tw-passagedata><tw-passagedata pid="15" name="Im fine" tags="resource-card" position="812.5,1850" size="100,100">&lt;div class=&quot;resource-stat-card&quot;&gt;&lt;strong&gt;Statistic:&lt;/strong&gt; About 75% of adolescents reported feeling “digital entrapment”—pressure to respond quickly and always be available to their best friend online. &lt;span class=&quot;resource-source&quot;&gt;(Winston Center, UNC-Chapel Hill)&lt;/span&gt;&lt;/div&gt;
+[[This person I have playing with online has been bugging me all the time to play. They are really good but I am getting bad sleep because of it-&gt;Speak Up]]</tw-passagedata><tw-passagedata pid="15" name="Im fine" tags="resource-card" position="812.5,1850" size="100,100">&lt;div class=&quot;resource-stat-card&quot;&gt;&lt;strong&gt;Statistic:&lt;/strong&gt; About 75% of adolescents reported feeling “digital entrapment”—pressure to respond quickly and always be available to their best friend online. &lt;span class=&quot;resource-source&quot;&gt;(Winston Center, UNC-Chapel Hill)&lt;/span&gt;&lt;/div&gt;
 
 [[Continue-&gt;Parents]]</tw-passagedata><tw-passagedata pid="16" name="Speak Up" tags="resource-card" position="937.5,1850" size="100,100">Nice one! Speaking out to your friends or especially an adult is always a good idea!
 
@@ -76,7 +94,7 @@ How do you respond to your parents?
 
 [[How do you respond to your parents?-&gt;Follow Up]]
 
-[[Someone I recently starting gaming with won&#39;t stop asking me to be online with them. They are nice and really good so I dont know what to do-&gt;Open Up]]</tw-passagedata><tw-passagedata pid="18" name="Follow Up" tags="" position="937.5,2100" size="100,100">Your parents tell you: &quot;We feel like you have been gaming alot is it anything with that?
+[[Someone I recently started gaming with won&#39;t stop asking me to be online with them. They are nice and really good so I don&#39;t know what to do-&gt;Open Up]]</tw-passagedata><tw-passagedata pid="18" name="Follow Up" tags="" position="937.5,2100" size="100,100">Your parents tell you: &quot;We feel like you have been gaming a lot. Is something going on with that?
 
 [[No-&gt;Reporting]]
 
@@ -84,7 +102,7 @@ How do you respond to your parents?
 
 &lt;div class=&quot;resource-stat-card&quot;&gt;&lt;strong&gt;Reminder:&lt;/strong&gt; If something feels wrong, tell a parent or trusted adult—because only 1 in 5 parents say their child tells them when something online scares or upsets them. &lt;span class=&quot;resource-source&quot;&gt;(Ofcom)&lt;/span&gt;&lt;/div&gt;
 
-[[Continue-&gt;Final]]</tw-passagedata><tw-passagedata pid="20" name="Final" tags="" position="950,2350" size="100,100">You decide to play just one game tonight after dinner with the squad. After the win , the user says they have a friend that might be interested in you and aks to send a picture.
+[[Continue-&gt;Final]]</tw-passagedata><tw-passagedata pid="20" name="Final" tags="" position="950,2350" size="100,100">You decide to play just one game tonight after dinner with the squad. After the win, the user says they have a friend that might be interested in you and asks to send a picture.
 
 Do you send a picture of yourself?
 
@@ -96,11 +114,11 @@ Do you send a picture of yourself?
 
 [[Continue-&gt;End]]</tw-passagedata><tw-passagedata pid="22" name="Open Up" tags="" position="1075,2100" size="100,100">It is good to open up to your parents and not hide anything from them.
 
-[[Continue-&gt;Reporting]]</tw-passagedata><tw-passagedata pid="23" name="End" tags="" position="937.5,2600" size="100,100">I hope you learned how to make more conscious decisions with strangers online. Remember to always prioritize your safety and speak up to your parents or gaurdians in a similar event.
+[[Continue-&gt;Reporting]]</tw-passagedata><tw-passagedata pid="23" name="End" tags="" position="937.5,2600" size="100,100">I hope you learned how to make more conscious decisions with strangers online. Remember to always prioritize your safety and speak up to your parents or guardians in a similar event.
 
-[[Play Again-&gt;Intro]]</tw-passagedata><tw-passagedata pid="24" name="Age" tags="resource-card" position="675,600" size="100,100">Remember: Honesty is the best policy!
+[[Play Again-&gt;Intro]]</tw-passagedata><tw-passagedata pid="24" name="Age" tags="resource-card" position="675,600" size="100,100">If you choose truthfully, you are the majority! However, teenagers may not always respond truthfully as they attempt to access restricted content.
 
-&lt;div class=&quot;resource-stat-card&quot;&gt;&lt;strong&gt;Statistic:&lt;/strong&gt; 44% of online teens said they had lied about their age to access a website or online account. &lt;span class=&quot;resource-source&quot;&gt;(Pew Research, 2011)&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;resource-stat-card&quot;&gt;&lt;strong&gt;Statistic:&lt;/strong&gt; 44% of teenagers said they had lied about their age online to access a website or online account. &lt;span class=&quot;resource-source&quot;&gt;(Pew Research, 2011)&lt;/span&gt;&lt;/div&gt;
 
 [[Continue-&gt;Homework]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";

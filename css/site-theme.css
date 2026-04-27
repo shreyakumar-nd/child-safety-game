@@ -246,6 +246,15 @@ body.site-body {
     color: var(--nd-gray-text);
 }
 
+.role-card img {
+    object-fit: contain;
+}
+
+.role-card img[src$="child-girl.png"] {
+    object-fit: cover;
+    border-radius: 50%;
+}
+
 .role-card .rounded-circle {
     object-fit: cover;
     border: 2px solid var(--nd-border);

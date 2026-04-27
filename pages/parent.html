@@ -9,11 +9,29 @@
 <link rel="stylesheet" href="../css/main.css">
 </head>
 <body class="twine-game">
-<a href="../index.html" class="twine-back-link">← Back</a>
-<tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Parent Game.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Parent Game" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="FFE2F818-B9F1-45B9-9210-A851B6CD36E1" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="675,350" size="100,100">Welcome to the Parent Online Safety game. In this simulation, you will assume the role of a parent responding to a difficult online safety situation involving your child. Your choices will show how important it is to stay calm, preserve evidence, report harmful behavior, and support your child.
+<a href="parent.html?restart=1" class="twine-back-link">Restart Game</a>
+<button type="button" class="twine-prev-button">Previous</button>
+<a href="../index.html#play-game" class="twine-home-link">Exit Game</a>
+<script>
+if (new URLSearchParams(window.location.search).has('restart')) {
+  sessionStorage.removeItem('Saved Session');
+  history.replaceState(null, '', window.location.pathname);
+}
+document.addEventListener('click', function (event) {
+  if (!event.target.matches('.twine-prev-button')) {
+    return;
+  }
 
-    [[Continue-&gt;Scenario]]</tw-passagedata><tw-passagedata pid="2" name="Scenario" tags="" position="675,475" size="100,100">You notice your 12-year-old child has been spending a lot of time in their room playing online games. Tonight, they seem upset and anxious. When you ask what&#39;s wrong, they reluctantly tell you that someone they met in the game chat has been sending them strange messages and asking for personal photos.
+  var undo = document.querySelector('tw-icon[alt="Undo"]');
+  if (undo && undo.style.visibility !== 'hidden') {
+    undo.click();
+  }
+});
+</script>
+<tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Parent Game.</tw-noscript></noscript></tw-story>
+<tw-storydata name="Parent Game" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="FFE2F818-B9F1-45B9-9210-A851B6CD36E1" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="intro-passage" position="675,350" size="100,100">Welcome to the Parent Online Safety game. In this simulation, you will step into the shoes of a parent responding to an online safety concern involving your child. Your choices will help you practice staying calm, keeping useful information, seeking support, and helping your child feel safe.
+
+    [[Continue-&gt;Scenario]]</tw-passagedata><tw-passagedata pid="2" name="Scenario" tags="story-passage" position="675,475" size="100,100">You notice your 12-year-old child, Maya, has been spending a lot of time in their room playing online games. Tonight, Maya seems upset and anxious. When you ask what&#39;s wrong, they reluctantly tell you that someone they met in the game chat has been sending them strange messages and asking for personal photos.
     
 What do you do first?
     
@@ -21,15 +39,15 @@ What do you do first?
 
 [[Ask to see the messages-&gt;See Messages]]
 
-[[Tell them to block the person-&gt;Block Person]]</tw-passagedata><tw-passagedata pid="3" name="Take Device" tags="" position="500,650" size="100,100">Your child feels blamed and ashamed. They shut down and refuse to share more details. This makes it harder to protect them and gather evidence. Children who feel blamed are less likely to report problems in the future.
+[[Tell them to block the person-&gt;Block Person]]</tw-passagedata><tw-passagedata pid="3" name="Take Device" tags="" position="500,650" size="100,100">Your child feels blamed and ashamed. They shut down and refuse to share more details. This makes it harder to understand what happened and decide what support they need. Children who feel blamed are less likely to report problems in the future.
     
-[[Try Again-&gt;Scenario]]</tw-passagedata><tw-passagedata pid="4" name="Block Person" tags="" position="900,650" size="100,100">While blocking is important, doing only this misses critical steps. You haven&#39;t preserved evidence, changed credentials, or reported to authorities. The predator may have already gathered information or could target other children.
+[[Try Again-&gt;Scenario]]</tw-passagedata><tw-passagedata pid="4" name="Block Person" tags="" position="900,650" size="100,100">While blocking is important, doing only this misses critical steps. You have not saved useful information, changed credentials, or considered whether to report the behavior. The person may have already gathered information or could contact other children.
     
 What do you do?
     
 [[Realize you need to do more and check the messages together-&gt;See Messages]]
     
-[[Feel satisfied that it is handled-&gt;Poor Choice]]</tw-passagedata><tw-passagedata pid="5" name="Poor Choice" tags="" position="975,800" size="100,100">Poor Choice. Blocking the predator is a good first step - but predators don&#39;t just disappear on their own. In reality, authorities get millions of reports of suspected grooming and enticement every year, and offenders often reach out to multiple children. That&#39;s why it&#39;s vital to preserve evidence, change your account info, and report to adults or law enforcement right away.
+[[Feel satisfied that it is handled-&gt;Poor Choice]]</tw-passagedata><tw-passagedata pid="5" name="Poor Choice" tags="" position="975,800" size="100,100">Blocking the person is a good first step. It can help stop immediate contact, but it may not fully address the risk. In reality, authorities receive millions of reports of suspected grooming and enticement every year, and people who target children often reach out to more than one young person. It is important to save useful information, change account credentials, and consider reporting to a platform, trusted adult, helpline, or law enforcement.
 
 [[Try Again-&gt;Block Person]]</tw-passagedata><tw-passagedata pid="6" name="See Messages" tags="" position="675,650" size="100,100">You reassure your child that it&#39;s not their fault. Your child shows you the messages. You realize this is more serious than you initially thought.
     
@@ -37,23 +55,23 @@ What should you do with these messages?
     
 [[Take screenshots-&gt;Screenshots]]
     
-[[Immediately delete all the messages to protect your child-&gt;Delete Messages]]</tw-passagedata><tw-passagedata pid="7" name="Delete Messages" tags="" position="850,800" size="100,100">Wrong Choice. Deleting the messages may feel protective, but it removes evidence that could help authorities investigate and protect other children.
+[[Immediately delete all the messages to protect your child-&gt;Delete Messages]]</tw-passagedata><tw-passagedata pid="7" name="Delete Messages" tags="" position="850,800" size="100,100">Deleting the messages may feel protective, but it can remove information that may help a platform, trusted adult, helpline, or authorities understand what happened and protect other children.
     
 [[Go back and take screenshots-&gt;Screenshots]]</tw-passagedata><tw-passagedata pid="8" name="Screenshots" tags="" position="675,800" size="100,100">Saved screenshots and copies of all messages. You carefully document everything - usernames, dates, times, and the content of messages. You save the images to a secure folder.
     
-Now you have evidence preserved. What do you do next?
+Now you have saved the messages. What do you do next?
     
 [[Cut off all communication by blocking the user and deleting your child&#39;s account-&gt;Delete Account]]
     
 [[First change all account credentials then block the user-&gt;Change Credentials]]
     
-[[Report the incident before anything else-&gt;Report First]]</tw-passagedata><tw-passagedata pid="9" name="Delete Account" tags="" position="500,975" size="100,100">Blocking the predator is important, but deleting the account may have removed additional evidence and made investigation harder. Also, you should change credentials so the predator can&#39;t access the account through saved passwords or recovery methods.
+[[Report the incident before anything else-&gt;Report First]]</tw-passagedata><tw-passagedata pid="9" name="Delete Account" tags="" position="500,975" size="100,100">Blocking the person is important, but deleting the account may remove additional information and make follow-up harder. Also, you should change credentials so the person cannot access the account through saved passwords or recovery methods.
     
-[[Go back and secure the account properly-&gt;Change Credentials]]</tw-passagedata><tw-passagedata pid="10" name="Change Credentials" tags="" position="675,975" size="100,100">Action completed: Changed all online credentials. Cut off communication with predator.
+[[Go back and secure the account properly-&gt;Change Credentials]]</tw-passagedata><tw-passagedata pid="10" name="Change Credentials" tags="" position="675,975" size="100,100">Action completed: Changed all online credentials and cut off communication with the person.
     
 You&#39;ve secured your child&#39;s accounts. Now what?
     
-[[Who to report to?-&gt;Report Options]]</tw-passagedata><tw-passagedata pid="11" name="Report First" tags="" position="850,975" size="100,100">Reported to law enforcement. You file a report with local police and submit a report to the National Center for Missing &amp; Exploited Children&#39;s CyberTipline. They assure you they take this seriously and will investigate.
+[[Who to report to?-&gt;Report Options]]</tw-passagedata><tw-passagedata pid="11" name="Report First" tags="" position="850,975" size="100,100">You choose to report. You file a report with local police and submit a report to the National Center for Missing &amp; Exploited Children&#39;s CyberTipline. They confirm that reports like this are taken seriously and reviewed.
     
 [[Continue-&gt;Emotion Check]]</tw-passagedata><tw-passagedata pid="12" name="Report Options" tags="" position="675,1125" size="100,100">Who to report to?
     
@@ -61,7 +79,7 @@ You&#39;ve secured your child&#39;s accounts. Now what?
     
 [[Report to the game platform-&gt;Platform Report]]
     
-[[Report to local police and the CyberTipline-&gt;Emotion Check]]</tw-passagedata><tw-passagedata pid="13" name="Private Handle" tags="resource-card" position="500,1275" size="100,100">Handling this privately may feel easier, but many incidents go unreported. Without reporting, the offender may continue targeting other children.
+[[Consider a CyberTipline or police report-&gt;Emotion Check]]</tw-passagedata><tw-passagedata pid="13" name="Private Handle" tags="resource-card" position="500,1275" size="100,100">Handling this privately may feel easier, but many incidents go unreported. Getting advice from a platform, helpline, CyberTipline, or law enforcement can help you decide what steps protect your child and others.
     
 &lt;div class=&quot;resource-stat-card&quot;&gt;&lt;strong&gt;Placeholder statistic:&lt;/strong&gt; Add a short “underreporting” fact here (e.g., how often incidents go unreported, or why reporting helps protect other children). &lt;span class=&quot;resource-source&quot;&gt;(Source name)&lt;/span&gt;&lt;/div&gt;
     
@@ -71,13 +89,13 @@ Report to anyone else?
     
 [[No it seems handled-&gt;No More Reporting]]
     
-[[Yes report to the police and the CyberTipline-&gt;Emotion Check]]</tw-passagedata><tw-passagedata pid="15" name="No More Reporting" tags="resource-card" position="675,1425" size="100,100">&lt;div class=&quot;resource-stat-card&quot;&gt;&lt;strong&gt;Placeholder statistic:&lt;/strong&gt; Add a short CyberTipline fact here (e.g., reports received per year, response scope, or what information to include when reporting). &lt;span class=&quot;resource-source&quot;&gt;(Source name)&lt;/span&gt;&lt;/div&gt;
+[[Consider a CyberTipline or police report-&gt;Emotion Check]]</tw-passagedata><tw-passagedata pid="15" name="No More Reporting" tags="resource-card" position="675,1425" size="100,100">&lt;div class=&quot;resource-stat-card&quot;&gt;&lt;strong&gt;Placeholder statistic:&lt;/strong&gt; Add a short CyberTipline fact here (e.g., reports received per year, response scope, or what information to include when reporting). &lt;span class=&quot;resource-source&quot;&gt;(Source name)&lt;/span&gt;&lt;/div&gt;
     
-Stopping at the platform report is an incomplete action. Serious exploitation concerns should also be reported to law enforcement.
+Stopping at the platform report is an incomplete action. For serious exploitation concerns, consider getting guidance from a helpline, the CyberTipline, or law enforcement.
     
 [[Go back-&gt;Platform Report]]</tw-passagedata><tw-passagedata pid="16" name="Emotion Check" tags="" position="850,1275" size="100,100">How is your child doing emotionally?
     
-[[Connect them with a speacialist that is knowledgable in this area-&gt;Specialist]]
+[[Connect them with a specialist who is knowledgeable in this area-&gt;Specialist]]
     
 [[They seem okay, we should move forward from this incident-&gt;Move Forward]]
     
@@ -93,9 +111,9 @@ Stopping at the platform report is an incomplete action. Serious exploitation co
     
 [[Connect them with a specialist-&gt;Specialist]]</tw-passagedata><tw-passagedata pid="19" name="Specialist" tags="" position="750,1575" size="100,100">Connecting your child with a specialist gives them emotional support and helps them process the experience in a healthy way.
     
-You responded in a safer and more complete way by preserving evidence, securing the account, reporting the incident, and supporting your child emotionally.
+You responded in a safer and more complete way by saving useful information, securing the account, considering reporting options, and supporting your child emotionally.
     
-[[Play Again-&gt;Intro]]</tw-passagedata><tw-passagedata pid="20" name="Incomplete Ending" tags="" position="950,1575" size="100,100">You took important protective actions, but missed some critical steps. Review what you did and didn&#39;t do: Your child is safer now, but a fully comprehensive response would have included all protective measures. Every step serves an important purpose in protecting your child and the wider community.
+[[Play Again-&gt;Intro]]</tw-passagedata><tw-passagedata pid="20" name="Incomplete Ending" tags="" position="950,1575" size="100,100">You took important protective actions, but missed some critical steps. Review what you did and didn&#39;t do: Your child is safer now, but a stronger response would have included more protective measures. Every step serves an important purpose in protecting your child and the wider community.
     
 [[Play Again-&gt;Intro]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
